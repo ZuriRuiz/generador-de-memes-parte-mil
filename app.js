@@ -133,3 +133,23 @@ alingRight.addEventListener("click", () => {
     TopTitleMeme.style = `text-align: right;`
     bottomTitleMeme.style = `text-align: right;`
 })
+
+//Color de letra
+const colorDeTexto = document.querySelector("#colorDeTexto");
+const spanTexto = document.querySelector("#refSpanTexto");
+
+colorDeTexto.addEventListener("input", ()=>{
+    TopTitleMeme.style.color = colorDeTexto.value;
+    bottomTitleMeme.style.color = colorDeTexto.value;
+    spanTexto.textContent = colorDeTexto.value;
+})    
+
+//Color fondo imagen
+const colorFondo = document.querySelector("#colorDeFondo");
+const spanColorFondo = document.querySelector("#refSpanFondo");
+
+colorFondo.addEventListener("input",()=>{
+    TopTitleMeme.style.backgroundColor = colorFondo.value;
+    bottomTitleMeme.style.backgroundColor = colorFondo.value;
+    spanColorFondo.textContent = colorFondo.value; //actualiza referencia color de fondo en el span
+});

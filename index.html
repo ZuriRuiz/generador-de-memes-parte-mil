@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/bca02f9d06.js" crossorigin="anonymous"></script>
+</head>
+<link rel="stylesheet" href="style.css">
+
+
+<body class="modoOscuro">
+    <title>EDITOR DE MEMES</title>
+    <!--HEADER-->
+
+    <header class="panelDeInicio">
+        <h1 class="titulo1">Generador de Memes</h1>
+        <div class="containerBotonHeader">
+            <button class="botonHeader" id="botonImagen">
+                <i class="far fa-images"></i>
+                Imagen
+            </button>
+            <button class="botonHeader" id="textoButton">
+                <i class="fas fa-font"></i>
+                Texto
+            </button>
+            <button class="botonClaroOscuro botonHeader">
+                <i class="fas fa-lightbulb"></i>
+                <span id="textoBoton">Modo Oscuro</span>
+            </button>
+        </div>
+    </header>
+
+    <!--Editor Container-->
+    <div class="divMeme">
+        <main class="containerMeme">
+            <div class="recuadroMeme">
+                <p class="textoMeme" id="textoUsuarioTop">TOP TEXT</p>
+                <div class="imagenMeme" id="colorFondoMeme"></div>
+                <p class="textoMeme" id="textoUsuarioBottom">BOTTOM TEXT</p>
+            </div>
+
+            <button class="downloadMeme">
+                <i class="fas fa-download"></i>
+                Descargar Meme
+            </button>
+        </main>
+    </div>
+
+    <!--ASIDE PANEL OCULTO-->
+    <aside class="panelControl ocultar" id="panelAside">
+        <button class="botonCerrar" id="botonDeCerrar">
+            <i class="fas fa-window-close"></i>
+        </button>
+
+        <!--SECCION DE PANEL DE IMAGEN-->
+        <section class="panelImagen">
+            <h2 class="tituloSection">IMAGEN</h2>
+            <div>
+                <h3 class="tituloPropiedades">URL</h3>
+                <input type="text" name="" id="" class="colorInputYBoton urlImagenMeme">
+            </div>
+
+            <!--FONDO-->
+            <h3 class="tituloPropiedades">FONDO</h3>
+            <div class="panelFondoImagen">
+                <div class="color colorInputYBoton colorFondoImagen">
+                    <input type="color" name="" id="colorFondoDiv">
+                    <span id="nombreColorFondoDiv">#FFFFF</span>
+                </div>
+
+                <div class="luminFondo">
+                    <select name="" id="blendMode" class="colorInputYboton">
+                        <option value="unset">Ninguno</option>
+                        <option value="lighten">Aclarar</option>
+                        <option value="darken">Oscurecer</option>
+                        <option value="difference">Diferencia</option>
+                        <option value="luminosity">Luminosidad</option>
+                        <option value="multiply">Multiplicar</option>
+                    </select>
+                </div>
+            </div>
+
+            <!--FILTROS-->
+            <div>
+                <h3 class="tituloPropiedades">FILTROS</h3>
+                <!--BRILLO-->
+                <div>
+                    <label for="brillo">Brillo</label>
+                    <input type="range" name="" id="brigthness-slider" min="0" max="1" value="1" step="0.1" class="puntoBarra">
+
+                </div>
+                <!--Opacidad-->
+                <div>
+                    <label for="opacidad">Opacidad</label>
+                    <input type="range" name="" id="opacity-slider" min="0" value="1" step="0.1" class="puntoBarra">
+                </div>
+                <!--Contraste-->
+                <div>
+                    <label for="contraste">Contraste</label>
+                    <input type="range" name="" id="contrast-slider" min="100" max="1000" value="100" class="puntoBarra">
+                </div>
+                <!--Desenfoque-->
+                <div>
+                    <label for="desenfoque">Desefonque</label>
+                    <input type="range" name="" id="grayscale-slider" min="0" max="100" value="0" class="puntoBarra">
+                </div>
+                <!--Sepia-->
+                <div>
+                    <label for="sepia">Sepia</label>
+                    <input type="range" name="" id="sepia-slider" min="0" max="100" value="0" class="puntoBarra">
+                </div>
+                <!--Hue-->
+                <div>
+                    <label for="Hue">Hue</label>
+                    <input type="range" name="" id="invert-slider" min="0" max="1" value="0" step="0.1" class="puntoBarra">
+                </div>
+                <!--Saturado-->
+                <div>
+                    <label for="saturado">Saturado</label>
+                    <input type="range" name="" id="sature-slider" min="0" max="1" value="0" step="0.1" class="puntoBarra">
+                </div>
+
+                <button class="colorInputYBoton restablecer" id="resetFiltros">Restablecer Filtros</button>
+
+            </div>
+        </section>
+
+        <!--ASIDE PANEL TEXTO-->
+        <section class="panelTexto ocultar">
+            <h2 class="tituloSection">TEXTO</h2>
+
+            <!--TEXTO-->
+            <div>
+                <h3 class="tituloPropiedades">SUPERIOR</h3>
+                <textarea name="" id="topText" minlength="1" maxlength="50" class="colorInputYBoton inputTextMeme">Top Text</textarea>
+
+                <div class="check">
+                    <input type="checkbox" name="" id="checkTopText">
+                    <label for="topText">Sin texto superior</label>
+                </div>
+            </div>
+            <div>
+                <h3 class="tituloPropiedades">INFERIOR</h3>
+                <textarea name="" id="bottomText" minlength="1" maxlength="50" class="colorInputYBoton inputTextMeme">Bottom Text</textarea>
+            </div>
+            <div>
+                <input type="checkbox" name="" id="checkBottomText">
+                <label for="bottomText">Sin texto inferior</label>
+            </div>
+
+            <!--FUENTE-->
+            <div>
+                <h3 class="tituloPropiedades">FUENTE</h3>
+                <!--TIPO DE FUENTE-->
+                <select name="" id="selectTipografias" class="familiaFuente colorInputYBoton">
+                    <option value="Impact">Impact</option>
+                    <option value="Arial">Arial</option>
+                    <option value="Trebuchet MS">Trebuchet</option>
+                    <option value="fantasy">Fantasy</option>
+                    <option value="Lucida Sans">Lucida Sans</option>
+                    <option value="Courier New">Courier New</option>
+                    <option value="Helvetica">Helvetica</option>
+                    <option value="Verdana">Verdana</option>
+                    <option value="Times New Roman">Times New Roman</option>
+                </select>
+
+                <div class="tamanioAlineacion">
+                    <!--Tamaño Fuente-->
+                    <input type="number" name="" id="tamanioFuente" class="colorInputYBoton" min="10" max="40" value="20">
+
+                    <!--Alineacion Fuente-->
+                    <div class="buttonAlign">
+                        <button class="alignLeft colorInputYBoton buttonAncho">
+                            <i class="fas fa-align-left"></i>
+                        </button>
+                        <button class="alignCenter colorInputYBoton buttonAncho">
+                            <i class="fas fa-align-center"></i>
+                        </button>
+                        <button class="alignRight colorInputYBoton buttonAncho">
+                            <i class="fas fa-align-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!--COLOR TEXTO Y FONDO-->
+            <div class="colorTextoYFondo">
+                <!--COLOR DE TEXTO-->
+                <div class="inputColorYFondo">
+                    <h3 class="tituloPropiedades">COLOR</h3>
+                    <div class="colorInputYBoton">
+                        <input type="color" name="colorDeTexo" id="colorDeTexto" value="#000000">
+                        <span id="refSpanTexto">#000000</span>
+                    </div>
+                </div>
+            </div>
+
+            <!--CHECK FONDO TRANSPARENTE-->
+            <div class="check" id="backgroundTransparent">
+                <input type="checkbox" name="" id="fondoTransparente">
+                <label for="fondoTransparente">Fondo Transparente</label>
+            </div>
+            <!--CONTORNO-->
+            <div class="contorno">
+                <h3 class="tituloPropiedades">CONTORNO</h3>
+                <div class="buttonContorno">
+                    <button class="ninguno colorInputYBoton">Ninguno</button>
+                    <button class="claro colorInputYBoton">Claro</button>
+                    <button class="oscuro colorInputYBoton">Oscuro</button>
+                </div>
+            </div>
+            <!--ESPACIADO-->
+            <div class="espaciado">
+                <h3 class="tituloPropiedades">ESPACIADO</h3>
+                <input type="number" name="" id="espaciado" max="20" min="10" value="10" class="colorInputYBoton anchoEspaciadoInterlineado">
+            </div>
+            <!--INTERLINEADO-->
+            <div class="interlineado">
+                <h3 class="tituloPropiedades">INTERLINEADO</h3>
+                <select name="" id="interlineado" class="colorInputYBoton anchoEspaciadoInterlineado">
+                    <option value="0.8">0.8</option>
+                    <option value="1">1</option>
+                    <option value="1.2">1.2</option>
+                    <option value="1.5">1.5</option>
+                    <option value="2">2</option>
+                    <option value="2.5">2.5</option>
+                </select>
+            </div>
+        </section>
+    </aside>
+    <script src="app.js"></script>
+</body>
+
+</html>

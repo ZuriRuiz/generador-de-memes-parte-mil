@@ -1,0 +1,409 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@100;200;300;400;500;600;700;800;900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+
+/*definicion colores modo claro / modo oscuro en variables*/
+
+body.modoClaro {
+    --colorFondo: rgb(255, 255, 255);
+    --color: rgb(0, 0, 0);
+    --fondoMain: rgb(182, 182, 182);
+    --colorHeader: rgb(9, 148, 106);
+    --colorPanel: rgb(177, 185, 141);
+}
+
+body.modoOscuro {
+    --colorFondo: rgb(3, 3, 3);
+    --color: rgb(255, 255, 255);
+    --fondoMain: rgb(18, 22, 22);
+    --colorHeader: rgb(66, 83, 85);
+    --colorPanel: rgb(31, 39, 38);
+}
+
+body {
+    background-color: var(--colorFondo);
+    /*aplicacion de variable*/
+    color: var(--color);
+}
+
+
+/*header*/
+
+
+/*panel Inicio contenedor de la imagen del meme y textos*/
+
+.divMeme {
+    background-color: var(--fondoMain);
+    /*aplicacion de variable*/
+}
+
+
+/*Titulo panel inicio*/
+
+.panelDeInicio {
+    background-color: var(--colorHeader);
+}
+
+.titulo1 {
+    font-family: 'Heebo', sans-serif;
+    font-weight: 800;
+    font-size: 45px;
+    text-align: center;
+    padding-top: 5px;
+}
+
+
+/*Botones panel inicio*/
+
+.containerBotonHeader {
+    text-align: center;
+}
+
+.botonHeader {
+    font-family: 'Lato', sans-serif;
+    border: 0;
+    font-weight: 900;
+    font-size: medium;
+    outline: none;
+    padding: 0 10px 0 10px;
+    margin: 5px;
+    height: 30px;
+    background-color: var(--colorHeader);
+    color: var(--color);
+    font-size: 15px;
+}
+
+.botonHeader:hover {
+    background-color: var(--colorFondo);
+    transition: 0.5s;
+    border-radius: 5px;
+}
+
+.containerMeme {
+    background-color: var(--fondoMain);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0 0 0;
+}
+
+.recuadroMeme {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.imagenMeme {
+    background-color: black;
+    width: 400px;
+    height: 330px;
+    display: flex;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position-x: center;
+    background-position-y: center;
+}
+
+
+/*texto arriba y abajo de la imagen*/
+
+.textoMeme {
+    font-family: 'Roboto', sans-serif;
+    font-size: 25px;
+    font-weight: 500;
+    background-color: white;
+    width: 400px;
+    height: 5%;
+    text-align: center;
+    padding: 17px 0 0 0;
+    color: rgb(2, 2, 2);
+}
+
+
+/*botón descarga meme*/
+
+.downloadMeme {
+    font-family: 'Lato', sans-serif;
+    background-color: rgb(0, 179, 122);
+    color: white;
+    border: 0;
+    border-radius: 5px;
+    width: 160px;
+    height: 40px;
+    margin: 20px;
+}
+
+.downloadMeme:hover {
+    background-color: rgb(65, 131, 110);
+}
+
+
+/*Aside*/
+
+.panelControl {
+    background-color: var(--colorPanel);
+    /*aplicacion de variable*/
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    font-family: 'Heebo', sans-serif;
+    padding: 40px 10px 010px;
+    overflow: scroll;
+    /*scroll panel texto*/
+}
+
+
+/*titulo seccion Img y Texto*/
+
+.tituloSection {
+    text-align: center;
+    font-size: 18px;
+}
+
+
+/* h3 de cada seccion*/
+
+.tituloPropiedades {
+    font-size: 16px;
+    padding: 15px 0 5px 0;
+}
+
+
+/*Input URL imgen meme*/
+
+.urlImagenMeme {
+    width: 100%;
+}
+
+.selectFile {
+    width: 100%;
+}
+
+.panelFondoImagen {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%
+}
+
+.colorFondoImagen {
+    width: 49%;
+}
+
+.luminFondo {
+    width: 49%;
+}
+
+
+/*Input range estilos*/
+
+input[type='range'] {
+    width: 100%;
+    background-color: var(--color);
+    border-radius: 10px;
+    appearance: none;
+    height: 6px;
+    margin-top: 10px;
+}
+
+.puntoBarra::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    background: var(--color);
+}
+
+.restablecer {
+    margin: 10px 0 10px 0;
+}
+
+
+/* estilos de los recuadros y botones de los paneles*/
+
+.colorInputYBoton {
+    background-color: var(--fondoMain);
+    border-radius: 5px;
+    border: none;
+    height: 30px;
+    padding: 8px;
+    color: var(--color);
+    font-family: 'Sintony', sans-serif;
+    font-size: 12px;
+}
+
+.colorInputYBoton:hover {
+    background-color: var(--colorHeader);
+    transition: 0.2s;
+}
+
+
+/*inputs de texto superior e inferior*/
+
+.inputTextMeme {
+    width: 100%;
+    resize: vertical;
+}
+
+
+/* ancho caja para cambiar tipografias*/
+
+.familiaFuente {
+    width: 100%;
+}
+
+
+/*botones de alineacion y tamaño de fuente */
+
+.tamanioAlineacion {
+    padding: 5px 0 0 0;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+
+/*select tamanio de fuente*/
+
+#tamanioFuente {
+    width: 49%;
+    margin: 0 2.5px 0 0;
+}
+
+
+/*div que contiene los botones de alieacion*/
+
+.buttonAlign {
+    width: 49%;
+}
+
+
+/*Ancho de los botones d ealieacion*/
+
+.buttonAncho {
+    width: 30%;
+}
+
+
+/*icono cruz para cerrar paneles aside*/
+
+.cerrar {
+    position: fixed;
+    top: 15px;
+    right: 40px;
+    z-index: 1;
+    background-color: var(--colorPanel);
+    border: 0;
+    font-size: 24px;
+    color: var(--color);
+}
+
+
+/*color de tipografia y fondo*/
+
+.colorTextoYFondo {
+    display: flex;
+    flex-direction: row;
+    font-size: 12px;
+    width: 100%;
+    justify-content: space-between;
+}
+
+
+/*div que contiene los botones de color de texto y fondo*/
+
+.inputColorYFondo {
+    width: 49%;
+    margin: 0 4px 0 0;
+}
+
+.check {
+    padding-top: 20px;
+    font-size: 14px;
+}
+
+
+/*input color estilo circular*/
+
+input[type='color'] {
+    width: 18px;
+    height: 18px;
+    min-width: 18px;
+    border: 0;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    margin-right: 10px;
+    background: none;
+}
+
+
+/*BOTONES CONTORNO clases contorno texto*/
+
+.sinContorno {
+    text-shadow: none;
+}
+
+.contornoClaro {
+    text-shadow: rgb(255, 255, 255) 2px 2px, rgb(255, 255, 255) -2px 2px, rgb(255, 255, 255) 2px -2px, rgb(255, 255, 255) -2px -2px;
+}
+
+.contornoOscuro {
+    text-shadow: rgb(0 0 0) 2px 2px, rgb(0 0 0) -2px 2px, rgb(0 0 0) 2px -2px, rgb(0 0 0) -2px -2px;
+}
+
+
+/*boton espaciado e interlineado*/
+
+.anchoEspaciadoInterlineado {
+    width: 100%;
+}
+
+.interlineado {
+    margin-bottom: 10px;
+}
+
+
+/*clase para ocultar los paneles o elementos necesarios*/
+
+.ocultar {
+    display: none;
+}
+
+
+/*Versión escritorio*/
+
+@media (min-width: 1000px) {
+    .panelControl {
+        width: 280px;
+        height: 100%;
+        z-index: 10;
+        background-color: var(--colorPanel);
+        box-shadow: -10px 10px 100px 5px rgb(0 0 0 / 30%);
+        padding: 20px 20px 0 10px;
+    }
+    .panelControl.ocultar {
+        display: block;
+    }
+    .cerrar {
+        background-color: var(--colorPanel);
+        display: none;
+    }
+}

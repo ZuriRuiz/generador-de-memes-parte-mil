@@ -153,3 +153,61 @@ colorFondo.addEventListener("input",()=>{
     bottomTitleMeme.style.backgroundColor = colorFondo.value;
     spanColorFondo.textContent = colorFondo.value; //actualiza referencia color de fondo en el span
 });
+
+//Fondo transparente
+const fondoTransparente = document.querySelector("#backgroundTransparent");
+
+fondoTransparente.addEventListener("input", ()=>{
+    TopTitleMeme.style = `background-color: transparent;`
+    bottomTitleMeme.style = `background-color: transparent;`
+})
+
+//Contorno
+const sinContorno = document.querySelector(".ninguno");
+const contornoClaro = document.querySelector(".claro");
+const contornoOscuro = document.querySelector(".oscuro");
+
+sinContorno.addEventListener("click", ()=>{
+    TopTitleMeme.classList.add("sinContorno");
+    bottomTitleMeme.classList.add("sinContorno");
+});
+
+contornoClaro.addEventListener("click", ()=>{
+    TopTitleMeme.classList.add("contornoClaro");
+    bottomTitleMeme.classList.add("contornoClaro");
+});
+
+contornoOscuro.addEventListener("click", ()=>{
+    TopTitleMeme.classList.add("contornoOscuro");
+    bottomTitleMeme.classList.add("contornoOscuro");
+});
+
+//Espaciado
+const espaciado = document.querySelector("#espaciado");
+
+espaciado.addEventListener ("input", ()=>{
+    TopTitleMeme.style.padding = `${espaciado.value}px 50px`;
+    bottomTitleMeme.style.padding = `${espaciado.value}px 50px`;
+});
+
+//--------INTERLINEADO--------
+const interlineado = document.querySelector("#interlineado");
+
+interlineado.addEventListener("input", () => {
+    TopTitleMeme.style.lineHeight = interlineado.value;
+    bottomTitleMeme.style.lineheight = interlineado.value;
+});
+
+//FINAL DEL PANEL DE TEXTO
+
+
+//PANEL IMAGEN
+const imagenMeme =  document.querySelector(".imagenMeme");
+const inputImagen = document.querySelector(".urlImagenMeme");
+
+inputImagen.addEventListener("change", () => {
+    imagenMeme.style.backgroundImage = `url("${inputurl.value}")`;
+});
+
+
+

@@ -114,22 +114,22 @@ tamanioFuente.addEventListener("input", ()=>{
     bottomTitleMeme.style.fontSize = `${tamanioFuente.value}px`;
 });
 
-//Alineacion
-const alingLeft = document.querySelector(".alingLeft");
-const alingCenter = document.querySelector(".alingCenter");
-const alingRight = document.querySelector(".alingRight");
+//Alineacion texto
+const alingLeft = document.querySelector(".alignLeft");
+const alingCenter = document.querySelector(".alignCenter");
+const alingRight = document.querySelector(".alignRight");
 
 alingLeft.addEventListener("click", () => {
-    TopTitleMeme.style = `text-align: left;`
-    bottomTitleMeme.style = `text-align: left;`
-});
+    TopTitleMeme.style = `text-align: left;`;
+    bottomTitleMeme.style = `text-align: left;`;
+})
 
 alingCenter.addEventListener("click", () => {
-    TopTitleMeme.style = `text-align: center;`
-    bottomTitleMeme.style = `text-align: center;`
-});
+    TopTitleMeme.style = `text-align: center;`;
+    bottomTitleMeme.style = `text-align: center;`;
+})
 
 alingRight.addEventListener("click", () => {
     TopTitleMeme.style = `text-align: right;`
     bottomTitleMeme.style = `text-align: right;`
-});
+})

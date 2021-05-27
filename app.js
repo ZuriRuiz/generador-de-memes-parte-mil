@@ -234,63 +234,48 @@ blendMode.addEventListener("input", ()=> {
     imagenMeme.style.backgroundBlendMode = blendMode.value;
 });
 
-//Sliders
-const brightness = document.getElementById("brightness-slider");
-const opacity = document.getElementById("opacity-slider");
-const contrast = document.getElementById("contrast-slider");
-const blurs = document.getElementById("blur-slider");
-const grayscale = document.getElementById("grayscale-slider");
-const sepia = document.getElementById("sepia-slider");
-const hue = document.getElementById("hue-slider");
-const saturate = document.getElementById("saturate-slider");
-const invert = document.getElementById("invert-slider");
+//Filtros de la imagen
+const brillo = document.getElementById("brillo");
+const opacidad = document.getElementById("opacidad");
+const contraste = document.getElementById("contraste");
+const desenfoque = document.getElementById("blur");
+const grises = document.getElementById("grayscale");
+const sepia = document.getElementById("sepia");
+const hue = document.getElementById("hue");
+const saturado = document.getElementById("saturado");
+const negativo = document.getElementById("negativo");
 
-const imagenFiltro = () =>{
-    imagenMeme.style.filter = `brightness(${brightness.value})
-    opacity(${opacity.value})
-    contrast(${contrast.value}%)
-    blur(${blurs.value}px)
-    grayscale(${grayscale.value}%)
-    sepia(${sepia.value}%)
-    hue-rotate(${hue.value}deg)
-    saturate(${saturate.value}%)
-    invert(${invert.value})`;
-}
+const filtrosImagen = ()=>{
+    imagenMeme.style.filter = `brightness(${brillo.value}) 
+    opacity(${opacidad.value}) contrast(${contraste.value}%) 
+    blur(${desenfoque.value}px) grayscale(${grises.value}%) 
+    sepia(${sepia.value}%) hue-rotate(${hue.value}deg) 
+    saturate(${saturado.value}%) invert(${negativo.value})`;
+};
 
-brightness.addEventListener("change",imagenFiltro);
-opacity.addEventListener("change",imagenFiltro);
-contrast.addEventListener("change",imagenFiltro);
-blurs.addEventListener("change",imagenFiltro);
-grayscale.addEventListener("change",imagenFiltro);
-sepia.addEventListener("change",imagenFiltro);
-hue.addEventListener("change",imagenFiltro);
-saturate.addEventListener("change",imagenFiltro);
-invert.addEventListener("change",imagenFiltro);
+brillo.addEventListener("change", filtrosImagen);
+opacidad.addEventListener("change", filtrosImagen);
+contraste.addEventListener("change", filtrosImagen);
+desenfoque.addEventListener("change", filtrosImagen);
+grises.addEventListener("change", filtrosImagen);
+sepia.addEventListener("change", filtrosImagen);
+hue.addEventListener("change",filtrosImagen);
+saturado.addEventListener("change", filtrosImagen);
+negativo.addEventListener("change", filtrosImagen);
 
-//Resetear Filtros
-const resetFiltros = document.querySelector("#resetFiltros");
+//Resetear filtros
+
+const resetFiltros = document.getElementById("resetFiltros");
 
 resetFiltros.addEventListener("click", ()=>{
-    imagenMeme.style.filter = brightness.value="1"; 
-                            opacity.value="1";
-                            contrast.value="100";
-                            blurs.value = "1";
-                            grayscale.value = "0";
-                            sepia.value="0";
-                            hue.value="0";
-                            saturate.value="100";
-                            invert.value="0";
-                            imagenFiltro(); 
-});
-
-//Boton de descarga
-//DESGARGA IMAGEN
-const recuadroMeme = document.querySelector(".recuadroMeme");
-const downloadMeme = document.querySelector(".downloadMeme");
-
-downloadMeme.addEventListener("click",()=>{
-    console.log("entre a la funcion");
-    domtoimage.toBlob(document.querySelector(".recuadroMeme")).then(function(blob){
-        window.saveAs(blob, 'meme.png');
-    });
-});
+    imagenMeme.style.filter = brillo.value="1"; 
+    opacidad.value="1";
+    contraste.value="100";
+    desenfoque.value = "1";
+    grises.value = "0";
+    sepia.value="0";
+    hue.value="0";
+    saturado.value="100";
+    negativo.value="0";
+    filtrosImagen(); 
+})

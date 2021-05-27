@@ -86,42 +86,52 @@
             <!--FILTROS-->
             <div>
                 <h3 class="tituloPropiedades">FILTROS</h3>
-                <!--BRILLO-->
-                <div>
+                <div >
                     <label for="brillo">Brillo</label>
-                    <input type="range" name="" id="brigthness-slider" min="0" max="1" value="1" step="0.1" class="puntoBarra">
+                    <input type="range" name="" id="brillo" min="0" max="1" value="1" step="0.1" class="puntoBarra">
+                </div>
 
-                </div>
-                <!--Opacidad-->
-                <div>
+                <div >
                     <label for="opacidad">Opacidad</label>
-                    <input type="range" name="" id="opacity-slider" min="0" value="1" step="0.1" class="puntoBarra">
+                    <input type="range" name="" id="opacidad" min="0" max="1" value="1" step="0.1" class="puntoBarra">
                 </div>
-                <!--Contraste-->
-                <div>
+
+                <div >
                     <label for="contraste">Contraste</label>
-                    <input type="range" name="" id="contrast-slider" min="100" max="1000" value="100" class="puntoBarra">
+                    <input type="range" name="" id="contraste" min="100" max="1000" value="100" class="puntoBarra">
                 </div>
-                <!--Desenfoque-->
-                <div>
+
+                <div >
                     <label for="desenfoque">Desenfoque</label>
-                    <input type="range" name="" id="grayscale-slider" min="0" max="100" value="0" class="puntoBarra">
+                    <input type="range" name="" id="blur" min="0" max="10" value="0" step="0.1" class="puntoBarra">
                 </div>
-                <!--Sepia-->
+
                 <div>
+                    <label for="escala">Escala de Grises</label>
+                    <input type="range" name="" id="grayscale" min="0" max="100" value="0" class="puntoBarra">
+                </div>
+
+                <div >
                     <label for="sepia">Sepia</label>
-                    <input type="range" name="" id="sepia-slider" min="0" max="100" value="0" class="puntoBarra">
+                    <input type="range" name="" id="sepia" min="0" max="100" value="0"  class="puntoBarra">
                 </div>
-                <!--Hue-->
+
                 <div>
-                    <label for="Hue">Hue</label>
-                    <input type="range" name="" id="invert-slider" min="0" max="1" value="0" step="0.1" class="puntoBarra">
+                    <label for="hue">Hue</label>
+                    <input type="range" name="" id="hue" min="0" max="360" value="0" class="puntoBarra">
                 </div>
-                <!--Saturado-->
-                <div>
+
+                <div >
                     <label for="saturado">Saturado</label>
-                    <input type="range" name="" id="sature-slider" min="0" max="1" value="0" step="0.1" class="puntoBarra">
+                    <input type="range" name="" id="saturado" min="100" max="1000" value="100" step="10"class="puntoBarra">
                 </div>
+
+                <div>
+                    <label for="negativo">Negativo</label>
+                    <input type="range" name="" id="negativo" min="0" max="1" value="0" step="0.1" class="puntoBarra">
+                </div>
+                
+            </div>
 
                 <button class="colorInputYBoton restablecer" id="resetFiltros">Restablecer Filtros</button>
 

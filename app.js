@@ -190,7 +190,7 @@ espaciado.addEventListener ("input", ()=>{
     bottomTitleMeme.style.padding = `${espaciado.value}px 50px`;
 });
 
-//--------INTERLINEADO--------
+//Interlineado
 const interlineado = document.querySelector("#interlineado");
 
 interlineado.addEventListener("input", () => {
@@ -201,13 +201,96 @@ interlineado.addEventListener("input", () => {
 //FINAL DEL PANEL DE TEXTO
 
 
-//PANEL IMAGEN
-const imagenMeme =  document.querySelector(".imagenMeme");
-const inputImagen = document.querySelector(".urlImagenMeme");
+//Panel de imagen
 
-inputImagen.addEventListener("change", () => {
-    imagenMeme.style.backgroundImage = `url("${inputurl.value}")`;
+//Input Imagen
+const urlImagenMeme = document.querySelector(".urlImagenMeme");
+
+//Seleccionar Archivo
+
+//Imagen por URL
+const imagenMeme = document.querySelector(".imagenMeme");
+
+urlImagenMeme.addEventListener("input", ()=>{
+    const url = urlImagenMeme.value;
+    imagenMeme.style.backgroundImage = `url('${url}')`;
 });
 
 
+//Color de fondo div imagen
+const colorFondoImagen = document.querySelector("#colorFondoMeme"); //div imagen
+const colorFondoDiv = document.querySelector("#colorFondoDiv"); //input color
+const nombreColorFondoDiv = document.querySelector("#nombreColorFondoDiv"); //span ref color
 
+colorFondoDiv.addEventListener("input", ()=>{
+    colorFondoImagen.style.backgroundColor = colorFondoDiv.value;
+    nombreColorFondoDiv.textContent = `${colorFondoDiv.value}`;
+});
+
+//Select de Efectos de Imagen
+const blendMode = document.querySelector("#blendMode");
+
+blendMode.addEventListener("input", ()=> {
+    imagenMeme.style.backgroundBlendMode = blendMode.value;
+});
+
+//Sliders
+const brightness = document.getElementById("brightness-slider");
+const opacity = document.getElementById("opacity-slider");
+const contrast = document.getElementById("contrast-slider");
+const blurs = document.getElementById("blur-slider");
+const grayscale = document.getElementById("grayscale-slider");
+const sepia = document.getElementById("sepia-slider");
+const hue = document.getElementById("hue-slider");
+const saturate = document.getElementById("saturate-slider");
+const invert = document.getElementById("invert-slider");
+
+const imagenFiltro = () =>{
+    imagenMeme.style.filter = `brightness(${brightness.value})
+    opacity(${opacity.value})
+    contrast(${contrast.value}%)
+    blur(${blurs.value}px)
+    grayscale(${grayscale.value}%)
+    sepia(${sepia.value}%)
+    hue-rotate(${hue.value}deg)
+    saturate(${saturate.value}%)
+    invert(${invert.value})`;
+}
+
+brightness.addEventListener("change",imagenFiltro);
+opacity.addEventListener("change",imagenFiltro);
+contrast.addEventListener("change",imagenFiltro);
+blurs.addEventListener("change",imagenFiltro);
+grayscale.addEventListener("change",imagenFiltro);
+sepia.addEventListener("change",imagenFiltro);
+hue.addEventListener("change",imagenFiltro);
+saturate.addEventListener("change",imagenFiltro);
+invert.addEventListener("change",imagenFiltro);
+
+//Resetear Filtros
+const resetFiltros = document.querySelector("#resetFiltros");
+
+resetFiltros.addEventListener("click", ()=>{
+    imagenMeme.style.filter = brightness.value="1"; 
+                            opacity.value="1";
+                            contrast.value="100";
+                            blurs.value = "1";
+                            grayscale.value = "0";
+                            sepia.value="0";
+                            hue.value="0";
+                            saturate.value="100";
+                            invert.value="0";
+                            imagenFiltro(); 
+});
+
+//Boton de descarga
+//DESGARGA IMAGEN
+const recuadroMeme = document.querySelector(".recuadroMeme");
+const downloadMeme = document.querySelector(".downloadMeme");
+
+downloadMeme.addEventListener("click",()=>{
+    console.log("entre a la funcion");
+    domtoimage.toBlob(document.querySelector(".recuadroMeme")).then(function(blob){
+        window.saveAs(blob, 'meme.png');
+    });
+});

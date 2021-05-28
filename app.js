@@ -282,11 +282,11 @@ resetFiltros.addEventListener("click", ()=>{
 
 //Descargar imagen
 const descarga = document.querySelector(".downloadMeme");
-const imgMeme = document.querySelector(".recuadroMeme");
+const contenedorDescarga = document.querySelector(".recuadroMeme");
 
-descarga.addEventListener("click", () =>{
-    domtoimage.toBlob(imgMeme)
-    .then(function (blob) {
+descarga.addEventListener("click", ()=>{
+    console.log("entre a la funcion");
+    domtoimage.toBlob(contenedorDescarga).then (function(blob){
         window.saveAs(blob, 'meme.png');
     });
 });

@@ -14,9 +14,9 @@
 body.modoClaro {
     --colorFondo: rgb(255, 255, 255);
     --color: rgb(0, 0, 0);
-    --fondoMain: rgb(182, 182, 182);
-    --colorHeader: rgb(9, 148, 106);
-    --colorPanel: rgb(177, 185, 141);
+    --fondoMain: rgb(79, 124, 93);
+    --colorHeader: rgb(77, 133, 83);
+    --colorPanel: rgb(93, 151, 91);
 }
 
 body.modoOscuro {

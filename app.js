@@ -279,3 +279,14 @@ resetFiltros.addEventListener("click", ()=>{
     negativo.value="0";
     filtrosImagen(); 
 })
+
+//Descargar imagen
+const descarga = document.querySelector(".downloadMeme");
+const imgMeme = document.querySelector(".recuadroMeme");
+
+descarga.addEventListener("click", () =>{
+    domtoimage.toBlob(imgMeme)
+    .then(function (blob) {
+        window.saveAs(blob, 'meme.png');
+    });
+});

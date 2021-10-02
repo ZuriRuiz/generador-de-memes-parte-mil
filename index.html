@@ -1,4 +1,9 @@
 <!DOCTYPE html>
+  <!-- La pagina esta en español, pero el lenguaje del documento es ingles. Un lector de pantalla trataria de 
+leerla en ingles (va a leer "yiniradour di mims") y buscadores como google van a recomendar esta web a 
+angloparlantes.
+El lang del documento debe coincidir con el lenguaje que usan los usuarios de esta pagina.  -->
+ 
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -25,7 +30,7 @@
 <body class="modoOscuro">
     <title>EDITOR DE MEMES</title>
     <!--HEADER-->
-
+<!-- separa tus clases con-guiones, igual que los ids. camelCase es para javascript -->
     <header class="panelDeInicio">
         <h1 class="titulo1">Generador de Memes</h1>
         <div class="containerBotonHeader">
@@ -49,6 +54,7 @@
         <main class="containerMeme">
             <div class="recuadroMeme">
                 <p class="textoMeme" id="textoUsuarioTop">TOP TEXT</p>
+        <!-- necesitas un aria label aca para indicarle al lector que hace esta imagen -->
                 <div class="imagenMeme" id="colorFondoMeme"></div>
                 <p class="textoMeme" id="textoUsuarioBottom">BOTTOM TEXT</p>
             </div>
@@ -62,6 +68,8 @@
 
     <!--ASIDE PANEL OCULTO-->
     <aside class="panelControl ocultar" id="panelAside">
+             <!-- hace falta un aria label aca, como sabe el lector de pantalla que es lo que hace este boton? 
+            este icono no se ve bien-->
         <button class="botonCerrar" id="botonDeCerrar">
             <i class="fas fa-window-close"></i>
         </button>
@@ -70,6 +78,8 @@
         <section class="panelImagen">
             <h2 class="tituloSection">IMAGEN</h2>
             <div>
+                      <!-- esto no es un titulo, es un label
+                  misma observacion para el resto de tus h3  -->
                 <h3 class="tituloPropiedades">URL</h3>
                 <input type="" name="" id="" class="colorInputYBoton urlImagenMeme">
             </div>
@@ -78,10 +88,12 @@
             <h3 class="tituloPropiedades">FONDO</h3>
             <div class="panelFondoImagen">
                 <div class="color colorInputYBoton colorFondoImagen">
+                           <!-- si no hay label ni aria label, como sabe el lector que hace este input? -->
                     <input type="color" name="" id="colorFondoDiv">
                     <span id="nombreColorFondoDiv">#FFFFF</span>
                 </div>
 
+                       <!-- si no hay label ni aria label, como sabe el lector que hace este input? -->
                 <div class="luminFondo">
                     <select name="" id="blendMode" class="colorInputYboton">
                         <option value="unset">Ninguno</option>
@@ -113,11 +125,13 @@
                 </div>
 
                 <div >
+                    <!-- la propiedad for debe ser igual al id del elemento!!! -->
                     <label for="desenfoque">Desenfoque</label>
                     <input type="range" name="" id="blur" min="0" max="10" value="0" step="0.1" class="puntoBarra">
                 </div>
 
                 <div>
+                    <!-- la propiedad for debe ser igual al id del elemento!!! -->
                     <label for="escala">Escala de Grises</label>
                     <input type="range" name="" id="grayscale" min="0" max="100" value="0" class="puntoBarra">
                 </div>
@@ -159,6 +173,7 @@
                 <textarea name="" id="topText" minlength="1" maxlength="50" class="colorInputYBoton inputTextMeme">Top Text</textarea>
 
                 <div class="check">
+                    <!-- la propiedad for debe ser igual al id del elemento!!! -->
                     <input type="checkbox" name="" id="checkTopText">
                     <label for="topText">Sin texto superior</label>
                 </div>
@@ -194,6 +209,7 @@
 
                     <!--Alineacion Fuente-->
                     <div class="buttonAlign">
+                        <!-- falta aria label  -->
                         <button class="alignLeft colorInputYBoton buttonAncho">
                             <i class="fas fa-align-left"></i>
                         </button>

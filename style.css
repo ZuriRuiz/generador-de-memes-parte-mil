@@ -194,6 +194,7 @@ body {
 
 .panelFondoImagen {
     display: flex;
+    /* innecesario */
     flex-direction: row;
     justify-content: space-between;
     width: 100%
@@ -274,6 +275,7 @@ input[type='range'] {
     padding: 5px 0 0 0;
     width: 100%;
     display: flex;
+    /* innecesario */
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -320,8 +322,10 @@ input[type='range'] {
 
 .colorTextoYFondo {
     display: flex;
+    /* innecesario */
     flex-direction: row;
     font-size: 12px;
+    /* los divs ocupan 100% por defecto */
     width: 100%;
     justify-content: space-between;
 }

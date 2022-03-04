@@ -9,6 +9,7 @@ botonCerrar.addEventListener("click", () => {
     panel.classList.add("ocultar");
 });
 
+// no es necesario comentar que es cada cosa, esa funcion la cumplen tus variables
 //BOTON IMAGEN
 const botonImagen = document.querySelector("#botonImagen");
 //BOTON TEXTO
@@ -76,10 +77,13 @@ bottomText.addEventListener("input", ()=>{
 
 //Sin Texto Superior/Inferior
 const checkboxInferior = document.getElementById("checkBottomText");
+// deja espacios en la funcion asi () => {
 checkboxInferior.addEventListener("change", ()=>{
+    // deja espacio entre el parentesis y la llave
     if (checkboxInferior.checked){
         bottomTitleMeme.classList.add("ocultar");
         bottomText.disable = true;
+        // deja espacios entre el else y ambas llaves 
     }else{
         bottomTitleMeme.classList.remove("ocultar");
         bottomText.disable = false;
@@ -88,6 +92,7 @@ checkboxInferior.addEventListener("change", ()=>{
 
 const checkboxSuperior = document.getElementById("checkTopText");
 checkboxSuperior.addEventListener("change", ()=>{
+    // deja espacio entre el if y el parentesis, ademas de las cosas ya mencionadas
     if(checkboxSuperior.checked){
         TopTitleMeme.classList.add("ocultar");
         bottomTitleMeme.classList.add("ocultar");
@@ -120,6 +125,7 @@ const alingCenter = document.querySelector(".alignCenter");
 const alingRight = document.querySelector(".alignRight");
 
 alingLeft.addEventListener("click", () => {
+    // no uses backticks a menos que estes interpolando, usa comillas dobles
     TopTitleMeme.style = `text-align: left;`;
     bottomTitleMeme.style = `text-align: left;`;
 })
@@ -224,6 +230,7 @@ const nombreColorFondoDiv = document.querySelector("#nombreColorFondoDiv"); //sp
 
 colorFondoDiv.addEventListener("input", ()=>{
     colorFondoImagen.style.backgroundColor = colorFondoDiv.value;
+    // innecesario el interpolado aca 
     nombreColorFondoDiv.textContent = `${colorFondoDiv.value}`;
 });
 
